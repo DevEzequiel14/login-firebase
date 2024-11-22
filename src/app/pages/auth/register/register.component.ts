@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class RegisterComponent {
 
-  loginService = inject(AuthService);
+  authService = inject(AuthService);
   router = inject(Router);
 
   form = new FormGroup({
@@ -26,7 +26,7 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      this.loginService.register(this.form.value as User).then(resp => this.router.navigate(['/dashboard']));
+      this.authService.register(this.form.value as User).then(resp => this.router.navigate(['/dashboard']));
     }
   }
 }
