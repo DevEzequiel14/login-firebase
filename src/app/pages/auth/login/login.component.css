@@ -1,17 +1,71 @@
-.container {
+.background {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-button {
-  width: 100%;
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to bottom, white 50%, #673ab7 50%);
+}
+
+.login-card-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-height: 450px;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 24px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.action-button {
+  margin-top: 16px;
+}
+
+.google-button mat-icon {
+  margin-right: 8px;
+}
+
+.register-link {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #673ab7;
+}
+
+.register-link strong {
+  color: #ff4081;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .login-card-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 20px;
+  }
 }

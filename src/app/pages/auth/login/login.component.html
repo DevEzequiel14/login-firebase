@@ -1,21 +1,34 @@
-<div class="center-container">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="container">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" formControlName="email">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="'password'" placeholder="Password" formControlName="password">
-      </mat-form-field>
-      <div class="example-button-row">
-        <button mat-flat-button color="primary" type="submit">Log In</button>
-      </div>
-    </div>
-  </form>
-  <div class="example-button-row">
-    <button mat-flat-button color="primary" (click)="loginInGoogle()">Log In with Google</button>
+<div class="background" @delayedFadeIn>
+  <div class="login-card-container">
+    <mat-card class="login-card" appearance="outlined">
+      <mat-card-title>Log In to Your Account</mat-card-title>
+      <mat-card-subtitle>Access your dashboard and manage your data</mat-card-subtitle>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" placeholder="Enter your email" formControlName="email" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter your password" formControlName="password" />
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="primary" class="action-button" type="submit">
+              Log In
+            </button>
+          </div>
+        </form>
+        <button mat-flat-button color="accent" class="action-button google-button" (click)="loginInGoogle()">
+          <mat-icon>google</mat-icon>
+          Log In with Google
+        </button>
+        <a href="/register" class="register-link">
+          Don't have an account? <strong>Sign Up</strong>
+        </a>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <a href="/register">You don't have an account? Register</a>
 </div>
