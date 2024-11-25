@@ -1,15 +1,30 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="container">
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Email" formControlName="email">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput [type]="'password'" placeholder="Password" formControlName="password">
-    </mat-form-field>
-    <div class="example-button-row">
-      <button mat-flat-button color="primary" type="submit">Register</button>
-    </div>
+<div class="background" @scaleFadeIn>
+  <div class="register-card-container">
+    <mat-card class="register-card" appearance="outlined">
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-subtitle>Create an account to start using our platform</mat-card-subtitle>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" placeholder="Enter your email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-label>Password</mat-label>
+            <input matInput [type]="'password'" placeholder="Enter your password" formControlName="password">
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-flat-button color="primary" class="action-button" type="submit">Register</button>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="/login" class="login-link">
+          Already have an account? <strong>Log In</strong>
+        </a>
+      </mat-card-actions>
+    </mat-card>
   </div>
-</form>
+</div>

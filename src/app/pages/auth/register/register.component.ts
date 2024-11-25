@@ -6,13 +6,32 @@ import { User } from '../../../core/interfaces/user';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
+  animations: [
+    trigger('scaleFadeIn', [
+      state('void', style({
+        transform: 'scale(0.5)', opacity: 0
+      })),
+      transition(':enter', [
+        animate('500ms ease-in-out', style({ transform: 'scale(1)', opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class RegisterComponent {
 
